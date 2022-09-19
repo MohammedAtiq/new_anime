@@ -37,7 +37,6 @@ export const GlobalState = props => {
     }
 
     const removeWatchList = (id) => {
-        console.log(id, "remove id")
         dispatch({ type: 'REMOVEWATCHLIST', payload: id });
     }
     return (

@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import SingleCart from './SingleCart'
-import { MdOutlineSearch } from "react-icons/md";
-
 
 
 const MainCart = () => {
 
-    const [search, setSearch] = useState('Naruto')
+    const [search, setSearch] = useState('')
     const [animeData, setAnimeData] = useState()
 
 
@@ -18,15 +16,15 @@ const MainCart = () => {
 
     useEffect(() => {
         getData()
-    }, [search])
+    }, [search]) // eslint-disable-line react-hooks/exhaustive-deps
     return (
         <div className="col-md-10 col2">
             <div className="col-md-3 mt-3 mx-auto search">
-                <input type="search" placeholder='Search Anime' onChange={(e) => setSearch(e.target.value)} style={{ width: '280px', padding: '10px', borderRadius: '15px' }} />
-                <i style={{ margin:"-45px",fontSize: '25px'}}><MdOutlineSearch/></i>
+                <input type="search" placeholder='Search Anime' onChange={(e) => setSearch(e.target.value)} />
+
             </div>
             <div className="row mt-3 gy-5">
-                <SingleCart animeData={animeData}/>
+                <SingleCart animeData={animeData} />
             </div>
         </div>
     )

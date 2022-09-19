@@ -19,7 +19,7 @@ function App() {
           <div className="row">
             <Header />
             <Routes>
-              <Route path="/home" element={<MainCart />} />
+              <Route path="/" element={<MainCart />} />
               <Route path="/addtolist" element={<AddtoList />} />
 
             </Routes>
